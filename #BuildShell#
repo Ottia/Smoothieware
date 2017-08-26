@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+# Modify next line and set destination drive to match mbed device
+export LPC_DEPLOY='cp PROJECT.bin /Volumes/MBED/ ; sync'
+
+SCRcase C-c C-x in
+
+IPT_PATH=$0
+SCRIPT_PATH=${SCRIPT_PATH%/*}
+cd $SCRIPT_PATH
+SCRIPT_PATH=$PWD
+export PATH=$SCRIPT_PATH/gcc-arm-none-eabi/bin:$SCRIPT_PATH/build/osx64:$PATH
+exec bash
